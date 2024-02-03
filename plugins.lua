@@ -50,7 +50,13 @@ local plugins = {
     "kdheepak/lazygit.nvim",
     cmd = "LazyGit",
   },
-
+  {
+    "github/copilot.vim",
+    lazy = false,
+    config = function()
+      require "custom.configs.copilot"
+    end,
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
