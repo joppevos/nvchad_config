@@ -57,6 +57,12 @@ local plugins = {
       require "custom.configs.copilot"
     end,
   },
+  {
+  "nvim-telescope/telescope-frecency.nvim",
+  config = function()
+    require("telescope").load_extension "frecency"
+  end,
+}
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

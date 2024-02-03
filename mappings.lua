@@ -18,6 +18,11 @@ M.general = {
     [">"] = { ">gv", "indent"},
   },
 }
+M.general = {
+  n = {
+        ["<leader>fr"] = { "<CMD>Telescope frecency<CR>", " Recent files" },
+  }
+}
 
 -- more keybinds!
 M.git = {
