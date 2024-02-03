@@ -46,6 +46,10 @@ local plugins = {
       require "custom.configs.conform"
     end,
   },
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = "LazyGit",
+  },
 
   -- To make a plugin not be loaded
   -- {
