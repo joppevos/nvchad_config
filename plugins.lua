@@ -51,31 +51,24 @@ local plugins = {
     cmd = "LazyGit",
   },
   {
-    "github/copilot.vim",
-    lazy = false,
+    "nvim-telescope/telescope-frecency.nvim",
     config = function()
-      require "custom.configs.copilot"
+      require("telescope").load_extension "frecency"
     end,
   },
   {
-  "nvim-telescope/telescope-frecency.nvim",
-  config = function()
-    require("telescope").load_extension "frecency"
-  end,
-}
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+    "github/copilot.vim",
+    lazy = false,
+    config = function()
+      -- Mapping tab is already used by NvChad
+      vim.g.copilot_no_tab_map = true;
+      vim.g.copilot_assume_mapped = true;
+      vim.g.copilot_tab_fallback = "";
+      -- The mapping is set to other key, see custom/lua/mappings
+      -- or run <leader>ch to see copilot mapping section
+    end
+  },
 
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
 }
 
 return plugins
